@@ -1,0 +1,20 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}
+    TaskHero/delete
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="">
+{% endblock extrahead %}
+{% block content %}
+    <body>
+        <div>
+            <p>Are you sure you want to delete {{ task.title }}?</p>
+            <form action="{% url 'TaskHero:confirm_delete' task.id %}" method="POST">
+            {% csrf_token %}
+                <button type="submit">Yes, Delete</button>
+                <a href="{% url 'TaskHero:task_detail' task.id %}">No, take me back</a>
+            </form>
+        </div>
+    </body>
+{% endblock content %}

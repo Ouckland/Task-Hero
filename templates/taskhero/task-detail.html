@@ -1,0 +1,27 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="">
+{% endblock extrahead %}
+{% block content %} 
+    <body>
+        {% include "partials/header.html" %}
+        <section>
+            <div>
+                <span>Title - {{ task.title }}</span>
+                <span>Description - {{ task.description }}</span>
+                <span>Due date - {{ task.due_date }}</span>
+                <span>Status - {{ task.get_status_display }}</span>
+                <span>Priority - {{ task.get_priority_display }}</span>
+                <div>
+                    <a href="{% url 'TaskHero:edit_task' task.id %}">Edit Task</a>
+                    <a href="{% url 'TaskHero:confirm_delete' task.id %}">Delete Task</a>
+                </div>
+            </div>
+        </section>
+    </body>
+{% endblock content %}  

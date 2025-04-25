@@ -1,0 +1,24 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}
+    TaskHero//edit/task/
+{% endblock title %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="">
+{% endblock extrahead %}
+{% block content %}
+    <body>
+        {% include "partials/header.html" %}
+        <section>
+            <div>
+                <form action="{% url 'TaskHero:edit_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    {{ edit_form.as_div }}
+                    <button type="submit">Edit task</button>
+                </form>
+            </div>
+        </section>
+    </body>
+{% endblock content %}

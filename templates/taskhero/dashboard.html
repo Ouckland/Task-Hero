@@ -6,9 +6,24 @@
 {% block content %}
     {% include "partials/header.html" %}
     <body>
-       
-       <div>
-        Welcome {{ request.user }} to the dashboard
-       </div> 
+       <section>
+            <div>
+                <form action="{% url 'TaskHero:dashboard' %}" method='POST'>
+                    {% csrf_token %}
+                    {{ search_form.as_div }}
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <p>Welcome {{ request.user }} to the dashboard</p>
+            <div>
+                {% for task in all_tasks %}
+                    <div>
+                    <span>{{ task }}</span>
+                    <a href="{% url 'TaskHero:task_detail' task.id %}">View Task</a>
+                    </div>
+                {% endfor %}
+            </div>
+
+       </section> 
     </body>
 {% endblock content %}
