@@ -1,0 +1,23 @@
+{% extends "partials/base.html" %}
+
+{% block title %}TaskHero/sign/up{% endblock title %}
+{% block style %}
+    <style>
+            li{
+            display: none;
+        }
+    </style>
+
+{% endblock style  %}
+{% block content %}
+    <body>
+        <section>
+            <form action="{% url 'users:sign_up' %}" method="POST">
+                {% csrf_token %}
+                {{ sign_up_form.as_div }}
+                <button type="submit">Submit</button>
+            </form>
+            <p>Already have an account?<a href="{% url 'users:login' %}">Login</a></p>
+        </section>
+    </body>
+{% endblock content %}

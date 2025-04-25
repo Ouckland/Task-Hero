@@ -1,0 +1,14 @@
+{% extends "partials/base.html" %}
+{% block title %}
+    TaskHero/dashboard
+{% endblock title %}
+
+{% block content %}
+    {% include "partials/header.html" %}
+    <body>
+       
+       <div>
+        Welcome {{ request.user }} to the dashboard
+       </div> 
+    </body>
+{% endblock content %}
