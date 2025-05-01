@@ -1,0 +1,91 @@
+/* Add Task Page Styles */
+/* General Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #120540, #433C73, #A4088C);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.dash-nav {
+    background-color: #120540;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+}
+
+.dash-nav form button {
+    background-color: #AEA7D9;
+    color: #120540;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dash-nav form button:hover {
+    background-color: #f2f2f2;
+    color: #120540;
+}
+
+.add-task-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(18, 5, 64, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #120540;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.add-task-form input,
+.add-task-form select,
+.add-task-form textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.add-task-form input:focus,
+.add-task-form select:focus,
+.add-task-form textarea:focus {
+    border: 2px solid #AEA7D9;
+    box-shadow: 0 0 5px rgba(174, 167, 217, 0.5);
+}
+
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #AEA7D9;
+    color: #120540;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #f2f2f2;
+    color: #120540;
+}

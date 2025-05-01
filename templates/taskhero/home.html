@@ -10,17 +10,36 @@
 {% endblock extrahead %}
 
 {% block content %}
-{% include 'partials/header.html' %}
     <body>
-  <div class="container">
-    <h1>Welcome to TaskHero</h1>
-    <p>TaskHero is your ultimate task management companion. Organize your day, prioritize tasks, and boost productivity with ease. Whether you're tackling personal goals or managing team projects, TaskHero helps you stay on top of everything.</p>
-    <p>Organize, prioritize, and get things done with ease. Task Hero is your smart task manager for everyday productivity.</p>
-    <div class="buttons">
-      <a href="{% url 'users:sign_up' %}" class="signup">Get Started</a>
-      <a href="#" class="learn">Learn More</a>
+      <nav class='home-nav'>
+        <div class='links'>
+            <a href='#'>Home</a>
+            <a href='#'>About</a>
+            <a href='#' >Testimonials</a>
+            <a href='#'>Services</a>
+        </div>
+            <div class='btns'>
+                <a href="{% url 'users:login' %}"><span class="material-symbols-outlined">Login</span></a>
+                <a href="{% url 'users:sign_up' %}"><span class="material-symbols-outlined">Sign up</span></a>
+            </div>
+
+        </nav>
+    <div class="container">
+      <h1>Welcome to TaskHero</h1>
+      <p>TaskHero is your ultimate task management companion. Organize your day, prioritize tasks, and boost productivity with ease. Whether you're tackling personal goals or managing team projects, TaskHero helps you stay on top of everything.</p>
+      <p>Organize, prioritize, and get things done with ease. Task Hero is your smart task manager for everyday productivity.</p>
+      <div class="buttons">
+        <a href="{% url 'users:sign_up' %}" class="signup">Get Started</a>
+      </div>
     </div>
-  </div>
+    {% comment %} <div class="container">
+      <h1>Welcome to TaskHero</h1>
+      <p>TaskHero is your ultimate task management companion. Organize your day, prioritize tasks, and boost productivity with ease. Whether you're tackling personal goals or managing team projects, TaskHero helps you stay on top of everything.</p>
+      <p>Organize, prioritize, and get things done with ease. Task Hero is your smart task manager for everyday productivity.</p>
+      <div class="buttons">
+        <a href="{% url 'users:sign_up' %}" class="signup">Get Started</a>
+      </div>
+    </div> {% endcomment %}
+    {% include "partials/footer.html" %}
 </body>
-{% include 'partials/footer.html' %}
 {% endblock content %}

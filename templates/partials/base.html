@@ -10,20 +10,15 @@
 </head>
 <body>
 <header>
-    
 </header>
-<div>
     {% if messages %}
+        <div>
             {% for message in messages %}
                 <p class='alert-{{ message.tags }}'>{{ message }}</p>
             {% endfor %}
-        {% endif %}
-</div>
+        </div>
+    {% endif %}
 {% block content %}
-    
 {% endblock content %}
-{% block footer %}
-    {% include "partials/footer.html" %}
-{% endblock footer %}
 </body>
 </html>

@@ -1,21 +1,22 @@
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+{% endblock extrahead %}
 {% block header %}
     {% if request.user.is_authenticated %}
-        <nav>
-             <span>Dashboard</span>
+        <nav class='dash-nav'>
+        <div>
             <form action="{% url 'users:logout' %}" method="POST">
                 {% csrf_token %}
+                <span class="material-symbols-outlined">logout</span>
                 <button type='submit'>Logout</button>
             </form>
-        </nav>
-    {% else %}
-        <nav>
-            <span>Home</span>
-            <span></span>
-            <span>Home</span>
-            <span>Home</span>
-            <a href="{% url 'users:login' %}">Login</a>
-            <a href="{% url 'users:sign_up' %}">Sign up</a>
+        
+        </div>
 
         </nav>
     {% endif %}
-{% endblock header %}
+{% endblock header %} 
+

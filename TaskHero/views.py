@@ -1,4 +1,4 @@
-
+from django.utils import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponseNotAllowed, HttpResponseForbidden
@@ -16,9 +16,12 @@ def home(request):
 @login_required
 def dashboard(request):
     all_tasks = TaskModel.objects.filter(added_by=request.user)
-    search_form = SearchForm(request.POST)
-    if request.method == 'POST':
-        search_form = SearchForm(request.POST)
+    to_do_tasks = all_tasks.filter(status='TD')
+    in_progress_tasks = all_tasks.filter(status='IP')
+    completed_tasks = all_tasks.filter(status='CPD')
+    search_form = SearchForm(request.GET)
+    if request.method == 'GET':
+        search_form = SearchForm(request.GET)
         if search_form.is_valid():
             title = search_form.cleaned_data.get('title')
             if title:
@@ -26,6 +29,9 @@ def dashboard(request):
 
     context = {
         'all_tasks': all_tasks,
+        'to_do_tasks': to_do_tasks,
+        'in_progress_tasks': in_progress_tasks,
+        'completed_tasks': completed_tasks,
         'search_form': search_form,
     }
     return render(request, 'taskhero/dashboard.html', context)
@@ -51,7 +57,8 @@ def task_detail(request, task_id):
     task = get_object_or_404(TaskModel, id=task_id)
     if task.added_by != request.user:
         return render(request, 'https/forbidden.html')
-    return render(request, 'taskhero/task-detail.html', context={'task': task})
+    is_overdue = task.due_date and task.due_date < timezone.now().date() and task.status != 'CPD'
+    return render(request, 'taskhero/task-detail.html', context={'task': task, 'is_overdue': is_overdue})
 
 @login_required
 def edit_task(request, task_id):

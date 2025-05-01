@@ -1,22 +1,26 @@
 {% extends "partials/base.html" %}
 {% load static %}
-
 {% block title %}
-    TaskHero//edit/task/
+    TaskHero/edit/note/
 {% endblock title %}
-
 {% block extrahead %}
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'css/add-task.css' %}">
 {% endblock extrahead %}
+
 {% block content %}
     <body>
-        {% include "partials/header.html" %}
+        <nav class="dash-nav">
+            <form action="{% url 'users:logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </nav>
         <section>
-            <div>
-                <form action="{% url 'TaskHero:edit_task' task.id %}" method="POST">
+            <div class="add-task-container">
+                <form action="{% url 'TaskHero:edit_task' task.id %}" method="POST" class="add-task-form">
                     {% csrf_token %}
                     {{ edit_form.as_div }}
-                    <button type="submit">Edit task</button>
+                    <button type="submit" class="submit-btn">Edit Task</button>
                 </form>
             </div>
         </section>
