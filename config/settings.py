@@ -34,7 +34,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost:', '127.0.0.1']
+ALLOWED_HOSTS = ['https://task-hero-y3xq.onrender.com']
 
 
 # Application definition
