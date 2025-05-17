@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #120540, #433C73, #A4088C);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.dash-nav {
+    background-color: #120540;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+}
+
+.dash-nav form button {
+    background-color: #AEA7D9;
+    color: #120540;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dash-nav form button:hover {
+    background-color: #f2f2f2;
+    color: #120540;
+}
+
+/* Section (Main Content Area) */
+section {
+    margin: 80px auto 20px;
+    width: 90%;
+    background-color: rgba(18, 5, 64, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #120540;
+    overflow-x: auto;
+}
+
+/* Task Card Container */
+.tasks-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    min-height: 500px;
+}
+
+/* Task Status Columns */
+.task-column {
+    flex: 1;
+    min-width: 300px;
+    background-color: #433C73;
+    padding: 1rem;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 8px #1e1e2f;
+}
+
+.task-column h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Individual Task Card */
+.task-item {
+    background-color: #AEA7D9;
+    color: #120540;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+/* Styling for Links as Buttons */
+.task-item a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background-color: #AEA7D9;
+    color: #120540;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.task-item a:hover {
+    background-color: #f2f2f2;
+    color: #120540;
+}
+
+/* Message Box Styling */
+.messages {
+    margin: 1rem auto;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Search Bar Navigation */
+.search-bar-nav {
+    margin: 1rem auto;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar-nav p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.search-bar-nav form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-bar-nav input {
+    padding: 0.5rem 1rem;
+    width: 250px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-bar-nav button {
+    padding: 0.5rem 1rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar-nav button:hover {
+    background: #333;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: #111;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #333;
+}
