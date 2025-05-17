@@ -24,7 +24,7 @@ import os
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key-for-dev-only')
 
-# SECRET_KEY = 'django-insecure-0^uq_x*1uaqbfgu!3g@x636fiug39by*ty(+1n(kt-*j0f31lt'
+SECRET_KEY = 'django-insecure-0^uq_x*1uaqbfgu!3g@x636fiug39by*ty(+1n(kt-*j0f31lt'
 
 
 import os
