@@ -9,12 +9,7 @@
 
 {% block content %}
     <body>
-        <nav class="dash-nav">
-            <form action="{% url 'users:logout' %}" method="POST">
-                {% csrf_token %}
-                <button type="submit" class="logout-btn">Logout</button>
-            </form>
-        </nav>
+        {% include "partials/header.html" %}
         <section>
             <div class="add-task-container">
                 <form action="{% url 'TaskHero:edit_task' task.id %}" method="POST" class="add-task-form">

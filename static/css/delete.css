@@ -73,3 +73,47 @@ body {
     background-color: #f2f2f2;
     color: #120540;
 }
+
+
+
+
+
+/* Responsive styles for Delete page */
+
+@media (max-width: 768px) {
+  .delete-section {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .delete-message {
+    font-size: 1.1rem;
+  }
+
+  .delete-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-section {
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .delete-message {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}

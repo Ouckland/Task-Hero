@@ -104,3 +104,59 @@ body {
     font-weight: bold;
     margin-left: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive media queries for Task Detail page */
+
+@media (max-width: 768px) {
+  .task-detail-section {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .task-detail-item {
+    font-size: 1rem;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .task-action-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-detail-section {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .task-detail-item {
+    font-size: 0.9rem;
+  }
+
+  .task-actions {
+    gap: 0.5rem;
+  }
+
+  .task-action-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
